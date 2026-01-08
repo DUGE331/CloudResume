@@ -1,0 +1,176 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="drag" class="cv instaFade wrap">
+    <div class="mainDetails">
+      <div id="headshot" class="">
+        <img src="assets/me.jpg" title="Hi, I'm Isaac!" alt="Isaac Douglas" />
+      </div>
+
+      <div id="name">
+        <h1 class="quickFade delayTwo">Isaac Douglas</h1>
+        <h4 class="quickFade delayThree">Brisbane, Australia</h4> 
+      </div>
+
+      <div id="contactDetails" class="quickFade delayFour">
+        <ul>
+
+        <li><a href="https://www.linkedin.com/in/Isaac-Douglas/" title="LinkedIn"><img src="assets/linkedin.png"> </a></li>
+
+        <li><a href="https://github.com/Duge331" title="GitHub"><img src="assets/github.png"> </a></li>
+        <li><a href="mailto:douglasisaac74@gmail.com" title="Email"><img src="assets/email.png"> </a></li>
+        <li>
+          <a href="https://notyetmade" title="My Blog">
+            <img src="assets/logo.png" alt="Logo" style="width: 50x; height: 25px;">
+          </a>
+        </li>
+        </ul>
+      </div>
+     <div class="clear"></div>
+    </div>
+
+    <div id="mainArea" class="quickFade delayFive">
+      
+      <section>
+        <article>
+          <div class="sectionTitle">
+            <h1>Personal Profile</h1>
+          </div>
+
+          <div class="sectionContent">
+            <p>I am a highly motivated IT professional based in Brisbane with a strong passion for cloud technologies. I have invested significant time and effort into upskilling myself in various areas related to the cloud. Alongside my expertise in cloud technologies, I excel in Windows systems and possess a quick ability to adapt and grasp new concepts. </p>
+          </div>
+        </article>
+        <div class="clear"></div>
+      </section>
+
+
+      <section>
+        <div class="sectionTitle">
+          <h1>Work Experience</h1>
+        </div>
+
+        <div class="sectionContent">
+          <article>
+            <h3>Produce</h3>
+            <h3>Woolworths</h3>
+            <p class="subDetails">December. 2025 - Present</p>
+            <p>
+              In my role, time managment is important and communication through multiple departments.
+              I am accountable for designing the presentation of the goods, as well as implementing designs past experiences. 
+              <p>
+               I foster an environment of innovation and excellence in my department.
+            </p>
+          </article>
+
+          <article>
+            <h3>Lead Ramp Attendant</h3>
+            <h3>Oceania</h3>
+            <p class="subDetails">Jun. 2023 - June. 2024</p>
+            <p>I successfully worked with a team in the delivery of a aircrafts. My responsibilities included managing and maintaining deadlines in the Gold Coast airport.
+
+              <p>One notable accomplishment during this role was achieving 98% success rate of delivering luggage, which significantly improved ratings associated with the Gold Coast Airport. Decpite the casual employees in our teams, we effectively managed our time to ensure optimal results.
+              
+              <p>I rapidly familiarized myself with the language and navigated the learning curve proficiently.
+            </p>
+          </article>
+
+          <article>
+            <h3>Food and Beverage Attendant</h3>
+            <h3>Mantra and Peppers</h3>
+            <p class="subDetails">Sep. 2022 - Jun. 2023</p>
+            <p>As a member of the Food and Beverage operations team, I played a crucial role in ensuring the guests were left satisfied with our service. 
+            <P>My responsibilities encompassed a diverse range of tasks, including both banquet operations and waiting in restraunts . </p>
+          </article>
+          
+          <article>
+            <h3>Butcher</h3>
+            <h3>The Meat Merchant</h3>
+            <p class="subDetails">Jan. 2016 - June. 2017</p>
+            <p>I collaborated this small businesses to effectively manage their cleanliness and outstanding customer service, featuring a wide range of tasks and responsibilities. 
+            <p>Initially focusing on cleaning the work environment and then butchering, I progressively established myself as the key resource for within the team, I also provided mentorship to fellow members, fostering professional growth and development.
+            </p>
+          </article>
+          
+        </div>
+        
+        
+        <div class="clear"></div>
+      </section>
+
+      <section id="Education">
+        <div class="sectionTitle">
+          <h1>Education</h1>
+        </div>
+
+        <div class="sectionContent">
+          <article>
+            <h2>Diploma in IT</h2>
+            <p class="subDetails">Queensland University of Technology</p>
+            <p></p>
+          </article>
+          <article>
+            <h2>Aws certified Solution Architect 2026</h2>
+            <p class="subDetails">Amazon Web Services</p>
+            <p></p>
+          </article>
+
+          <article>
+            <h2>ATAR and High School Certificate</h2>
+            <p class="subDetails">Mt St Patricks College</p> 
+            <p></p>
+          </article>
+
+        <section id="AboutSite">
+          <div class="sectionTitle">
+            <h1>Other achievements </h1>
+          </div>
+
+          </section>
+      <div class="clear"></div>
+        <section id="AboutSite">
+          <div class="sectionTitle">
+            <h1>About this site:</h1>
+          </div>
+
+          <div class="sectionContent">
+          <article>
+            <p class="subDetails"></p>
+            This site is the my attempt at the Cloud Resume Challenge project! The main goal was to create an online resume while showcasing the skills I learned on Amazon Web Services. I used a mix of technologies like HTML, CSS, Javascript, AWS S3 buckets, Pipelines, Dynamo DB, Lambda, and APIs, among others.
+
+            If you're interested in knowing more about the steps involved, feel free to check out my personal blog where I've detailed everything!  <a href="https://notmadeyet">Here!</a></p> 
+            </p>
+          </article>
+
+            <script>
+              fetch('https://5cabfxax81.execute-api.ap-southeast-2.amazonaws.com/Prod/', {
+                method: 'POST',
+                headers: {
+                  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+              })
+
+                .then(response => response.json())
+                .then(json => {
+                console.log(json);
+              });
+            </script>
+            <script>
+              fetch('https://5cabfxax81.execute-api.ap-southeast-2.amazonaws.com/Prod/')
+                  .then((response => response.json()))  
+                  .then((data) => {document.getElementById("counter").innerHTML = data})                                
+            </script>
+            <article>
+            <p class="subDetails"> You are visitor number <span id="counter">loading...</span></p> 
+            <p></p>
+          </article>
+          
+        </div>
+       </div>
+      <div class="clear"></div>
+      </section>   
+    </div>
+  </div>
+</body>
