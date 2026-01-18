@@ -143,30 +143,33 @@
             If you're interested in knowing more about the steps involved, feel free to check out my personal blog where I've detailed everything!  <a href="https://notmadeyet">Here!</a></p> 
             </p>
           </article>
+            
+  <p class="subDetails">
+    You are visitor number <span id="counter">loading...</span>
+  </p>
 
-            <script>
-              fetch('https://5cabfxax81.execute-api.ap-southeast-2.amazonaws.com/Prod/', {
-                method: 'POST',
-                headers: {
-                  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-                },
-              })
+  <!-- Visitor counter script -->
+  <script>
+    const apiUrl = "https://p1i6f6qtq9.execute-api.ap-southeast-2.amazonaws.com/";
 
-                .then(response => response.json())
-                .then(json => {
-                console.log(json);
-              });
-            </script>
-            <script>
-              fetch('https://5cabfxax81.execute-api.ap-southeast-2.amazonaws.com/Prod/')
-                  .then((response => response.json()))  
-                  .then((data) => {document.getElementById("counter").innerHTML = data})                                
-            </script>
-            <article>
-            <p class="subDetails"> You are visitor number <span id="counter">loading...</span></p> 
-            <p></p>
-          </article>
-          
+    async function updateVisitorCount() {
+      try {
+        // Increment counter
+        await fetch(apiUrl, { method: "POST" });
+
+        // Get updated count
+        const response = await fetch(apiUrl);
+        const count = await response.json();
+
+        document.getElementById("counter").innerText = count;
+      } catch (err) {
+        console.error("Visitor counter error:", err);
+        document.getElementById("counter").innerText = "error";
+      }
+    }
+
+    updateVisitorCount();
+  </script>
         </div>
        </div>
       <div class="clear"></div>
