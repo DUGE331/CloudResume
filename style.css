@@ -1,3 +1,7 @@
+body {
+  background: red !important;
+}
+
 html,
 body,
 div,
@@ -503,3 +507,4 @@ h4 {
   -moz-animation-delay: 0, 2.5s;
   animation-delay: 0, 2.5s;
 }
+
