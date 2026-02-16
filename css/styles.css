@@ -10970,3 +10970,14 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+.cert-link {
+    text-decoration: none; /* remove default underline */
+    color: inherit; /* use existing text color */
+    display: block; /* make the link wrap the whole div */
+}
+
+.cert-link:hover {
+    color: brown; /* changes text color on hover */
+    cursor: pointer; /* shows the hand icon */
+}
