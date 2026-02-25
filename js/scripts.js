@@ -28,8 +28,7 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // --- Visitor Counter ---
-    const apiUrl = "http://localhost:8000/visitor"; // local testing
-    // const apiUrl = "https://<your-api-gateway>.execute-api.ap-southeast-2.amazonaws.com/visitor"; // production
+    const apiUrl = "https://<your-api-gateway>.execute-api.ap-southeast-2.amazonaws.com/visitor";
 
     async function updateVisitorCount() {
         try {
