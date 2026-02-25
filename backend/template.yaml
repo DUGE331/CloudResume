@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Cloud Resume Visitor Lambda (Dev)
+
+Resources:
+  LambdaVisitor:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: CloudResumeVisitorHandler-Dev
+      Handler: app.lambda_handler
+      Runtime: python3.11
+      CodeUri: .
+      Timeout: 10
+      MemorySize: 128
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Environment:
+        Variables:
+          VISITOR_TABLE: CloudResumeVisitors-Dev
+      Events:
+        DevVisitorApi:
+          Type: Api
+          Properties:
+            Path: /dev-visitor
+            Method: ANY

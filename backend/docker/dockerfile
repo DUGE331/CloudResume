@@ -1,0 +1,14 @@
+# Use AWS Lambda Python runtime
+FROM public.ecr.aws/lambda/python:3.11
+
+# Set working directory
+WORKDIR /var/task
+
+# Copy code
+COPY . .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set Lambda handler
+CMD ["app.handler"]

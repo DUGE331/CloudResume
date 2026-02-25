@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: visitor-ingress
+spec:
+  rules:
+  - host: visitor.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: visitor-counter-service   # <-- Correct service name
+            port:
+              number: 80
