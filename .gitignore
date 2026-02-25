@@ -1,0 +1,32 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env       # keep your AWS keys out of Git
+*.venv/
+venv/
+.env.*
+
+# Docker artifacts
+docker-compose.override.yml
+*.log
+*.pid
+
+# Virtual environment folders (if any)
+env/
+ENV/
+
+# VS Code / IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node / frontend build artifacts (optional, if any)
+node_modules/
+dist/
+build/

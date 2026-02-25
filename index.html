@@ -242,35 +242,24 @@ Deployed via AWS S3 with a CI/CD pipeline, leveraging Terraform for infrastructu
         <hr class="m-0" />
 
 
-        <!-- Other / About Site-->
-        <section class="resume-section" id="other">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Other Achievements & About this site</h2>
-                <p>This site is my attempt at the Cloud Resume Challenge project! The main goal was to create an online resume while showcasing the skills I learned on Amazon Web Services. I used a mix of technologies like HTML, CSS, Javascript, AWS S3 buckets, Pipelines, DynamoDB, Lambda, and APIs, among others.</p>
+<!-- Other / About Site -->
+<section class="resume-section" id="other">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Other Achievements & About this site</h2>
+        <p>
+            This site is my attempt at the Cloud Resume Challenge project! The main goal was to create an online resume while showcasing the skills I learned on Amazon Web Services. I used a mix of technologies like HTML, CSS, JavaScript, AWS S3 buckets, Pipelines, DynamoDB, Lambda, and APIs, among others.
+        </p>
 
-                <p class="subDetails">You are visitor number <span id="counter">loading...</span></p>
-                <script>
-                    const apiUrl = "https://p1i6f6qtq9.execute-api.ap-southeast-2.amazonaws.com/";
-                    async function updateVisitorCount() {
-                        try {
-                            await fetch(apiUrl, { method: "POST" });
-                            const response = await fetch(apiUrl);
-                            const count = await response.json();
-                            document.getElementById("counter").innerText = count;
-                        } catch (err) {
-                            console.error("Visitor counter error:", err);
-                            document.getElementById("counter").innerText = "error";
-                        }
-                    }
-                    updateVisitorCount();
-                </script>
-            </div>
-        </section>
+        <p class="subDetails">
+            You are visitor number <span id="counter">loading...</span>
+        </p>
+
     </div>
+</section>
 
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS -->
+<script src="js/scripts.js"></script>
 </body>
 </html>
