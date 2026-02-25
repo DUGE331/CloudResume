@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // --- Visitor Counter ---
     // --- Visitor Counter ---
-const apiUrl = "https://abcd1234ef.execute-api.ap-southeast-2.amazonaws.com/prod/visitor";
+const apiUrl = "https://p1i6f6qtq9.execute-api.ap-southeast-2.amazonaws.com/visitor";
 
     async function updateVisitorCount() {
         try {
