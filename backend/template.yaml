@@ -5,6 +5,8 @@ Description: Cloud Resume Visitor Lambda
 Resources:
   LambdaVisitor:
     Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: python3.11
     Properties:
       FunctionName: CloudResumeVisitorHandler
       Handler: app.handler

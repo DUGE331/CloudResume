@@ -2,7 +2,7 @@ from mangum import Mangum
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from core import increment_visitor
+from backend.core import increment_visitor
 
 app = FastAPI()
 
