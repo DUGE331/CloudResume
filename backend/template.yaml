@@ -1,13 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Cloud Resume Visitor Lambda (Dev)
+Description: Cloud Resume Visitor Lambda
 
 Resources:
   LambdaVisitor:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: CloudResumeVisitorHandler-Dev
-      Handler: app.lambda_handler
+      FunctionName: CloudResumeVisitorHandler
+      Handler: app.handler
       Runtime: python3.11
       CodeUri: .
       Timeout: 10
@@ -18,8 +18,18 @@ Resources:
         Variables:
           VISITOR_TABLE: CloudResumeVisitors-Dev
       Events:
-        DevVisitorApi:
+        VisitorApi:
           Type: Api
           Properties:
-            Path: /dev-visitor
-            Method: ANY
+            Path: /visitor
+            Method: GET
+            RestApiId: !Ref VisitorApi
+
+  VisitorApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors:
+        AllowMethods: "'GET,OPTIONS'"
+        AllowHeaders: "'Content-Type'"
+        AllowOrigin: "'https://www.isaac-douglas.com'"
