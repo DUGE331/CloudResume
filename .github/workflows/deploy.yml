@@ -49,6 +49,7 @@ jobs:
       - name: Build and Deploy
         run: |
           cd backend
+          pip install -r requirements.txt -t .
           sam build
           sam deploy \
             --stack-name MyLambdaStack \
