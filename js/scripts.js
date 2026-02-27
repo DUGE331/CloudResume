@@ -28,27 +28,21 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // --- Visitor Counter ---
-    // --- Visitor Counter ---
-const apiUrl = "https://p1i6f6qtq9.execute-api.ap-southeast-2.amazonaws.com/Prod/visitor";
-
+    const apiUrl = "https://p1i6f6qtq9.execute-api.ap-southeast-2.amazonaws.com/Prod/visitor";
 
     async function updateVisitorCount() {
         try {
-            const response = await fetch(apiUrl); // GET increments counter
+            const response = await fetch(apiUrl);
             const data = await response.json();
             const counter = document.getElementById("counter");
-            if (counter) {
-                counter.innerText = data.visitor_count; // match your API response
-            }
+            if (counter) counter.innerText = data.visitor_count;
         } catch (err) {
             console.error("Visitor counter error:", err);
             const counter = document.getElementById("counter");
-            if (counter) counter.innerText = "error";
+            if (counter) counter.innerText = "N/A";
         }
     }
 
     updateVisitorCount();
 
 });
-
-window.addEventListener('DOMContentLoaded', updateVisitorCount);
