@@ -5,7 +5,7 @@ A fully cloud-native personal portfolio built as an advanced implementation of t
 This project demonstrates serverless architecture, infrastructure as code, containerization, Kubernetes orchestration, CI/CD automation, and production deployment patterns.
 
 
-## 🌍 Live Site: www.isaac-douglas.com
+### 🌍 Live Site: www.isaac-douglas.com
 
 ## 🏗 Architecture Overview
 
@@ -76,7 +76,7 @@ Secure IAM policies
 Public API consumed by frontend JavaScript
 
 
-✅ Containerization (Dev)
+### ✅ Containerization (Dev)
 
 FastAPI backend packaged in Docker
 
@@ -109,19 +109,19 @@ Self-healing when pods are manually killed
 ### ✅ CI/CD Automation
 
 GitHub Actions pipeline:
-<img width="2080" height="1397" alt="Screenshot 2026-02-28 164301" src="https://github.com/user-attachments/assets/bc4a5f93-ed32-48c3-a420-2058a0036a61" />
 
 Automated build on push
 
 Backend tests execution
 
 Docker image builds
-![DockerWorking2afterRefresh](https://github.com/user-attachments/assets/e7cce253-c525-46c5-9bd9-d7b730f94073)
 
 Infrastructure validation
 
 CloudFront invalidation via CodeBuild in AWS (frontend updates)
 <img width="1912" height="892" alt="InvalidateCloudFront-Build-Success" src="https://github.com/user-attachments/assets/d9fbea97-bc6f-4e5a-97ee-5b6cdb017d41" />
+![DockerWorking2afterRefresh](https://github.com/user-attachments/assets/e7cce253-c525-46c5-9bd9-d7b730f94073)
+<img width="2080" height="1397" alt="Screenshot 2026-02-28 164301" src="https://github.com/user-attachments/assets/bc4a5f93-ed32-48c3-a420-2058a0036a61" />
 
 
 ## 📊 Stress Testing & Observability
@@ -142,36 +142,27 @@ Verified Kubernetes self-healing behavior
 <img width="2856" height="1613" alt="KuberTermStressResults" src="https://github.com/user-attachments/assets/64085dab-7313-4f48-acef-a4b94a41c7a7" />
 
 ## 📁 Project Structure
+
 CloudResume/
-│
 ├── assets/                    # Static images and media
-│
 ├── css/                       # Frontend styling
-│
 ├── js/                        # Visitor counter API integration
-│
 ├── backend/                   # Serverless Lambda backend
 │   ├── app.py
 │   ├── requirements.txt
 │   └── template.yaml
-│
 ├── docker/                    # Docker configuration
 │   └── Dockerfile
-│
 ├── kubernetes/                # Kubernetes manifests
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── hpa.yaml
-│
 ├── infrastructure/            # Terraform IaC
 │   ├── main.tf
 │   ├── variables.tf
 │   └── outputs.tf
-│
 ├── .github/workflows/         # CI/CD pipelines
-│
 ├── index.html
-│
 └── README.md
 
 ## 🔐 Security & Networking
