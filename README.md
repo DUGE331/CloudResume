@@ -4,7 +4,9 @@ A fully cloud-native personal portfolio built as an advanced implementation of t
 
 This project demonstrates serverless architecture, infrastructure as code, containerization, Kubernetes orchestration, CI/CD automation, and production deployment patterns.
 
+
 🌍 Live Site: www.isaac-douglas.com
+
 
 🏗 Architecture Overview
 
@@ -34,6 +36,7 @@ IAM (security policies)
 
 Terraform (Infrastructure as Code)
 
+
 ⚙️ Dev / Cloud-Native Environment (Container + Kubernetes)
 
 Frontend → API → FastAPI Visitor Service → DynamoDB
@@ -60,7 +63,9 @@ Terraform (infrastructure provisioning)
 
 AWS (shared DynamoDB backend)
 
+
 🔧 Key Features
+
 ✅ Infrastructure as Code (Terraform)
 
 Entire AWS production environment provisioned via Terraform
@@ -68,6 +73,7 @@ Entire AWS production environment provisioned via Terraform
 S3 buckets, IAM roles, DynamoDB tables, API Gateway
 
 Reproducible cloud infrastructure
+
 
 ✅ Serverless Backend (Production)
 
@@ -81,6 +87,7 @@ Secure IAM policies
 
 Public API consumed by frontend JavaScript
 
+
 ✅ Containerization (Dev)
 
 FastAPI backend packaged in Docker
@@ -88,6 +95,7 @@ FastAPI backend packaged in Docker
 Reproducible development environment
 
 Local testing via Docker + Minikube
+
 
 ✅ Kubernetes Orchestration
 
@@ -109,19 +117,24 @@ Scale-down when idle
 
 Self-healing when pods are manually killed
 
+
 ✅ CI/CD Automation
 
 GitHub Actions pipeline:
+<img width="2080" height="1397" alt="Screenshot 2026-02-28 164301" src="https://github.com/user-attachments/assets/bc4a5f93-ed32-48c3-a420-2058a0036a61" />
 
 Automated build on push
 
 Backend tests execution
 
 Docker image builds
+![DockerWorking2afterRefresh](https://github.com/user-attachments/assets/e7cce253-c525-46c5-9bd9-d7b730f94073)
 
 Infrastructure validation
 
 CloudFront invalidation (frontend updates)
+<img width="1912" height="892" alt="InvalidateCloudFront-Build-Success" src="https://github.com/user-attachments/assets/d9fbea97-bc6f-4e5a-97ee-5b6cdb017d41" />
+
 
 📊 Stress Testing & Observability
 
@@ -134,6 +147,11 @@ Observed scaling events
 Monitored pod restart counts
 
 Verified Kubernetes self-healing behavior
+
+<img width="2879" height="1626" alt="KuberDashScaleOut" src="https://github.com/user-attachments/assets/fbf4ce4e-6f43-4b95-9c16-230585aeae5b" />
+<img width="2879" height="1589" alt="KuberDashScaleIn" src="https://github.com/user-attachments/assets/732ab389-30fb-4240-bee3-ac263fe4a84d" />
+<img width="2879" height="1490" alt="KuberDashPods" src="https://github.com/user-attachments/assets/d0f73af3-3c14-4a63-a836-79cd21b68ec6" />
+<img width="2856" height="1613" alt="KuberTermStressResults" src="https://github.com/user-attachments/assets/64085dab-7313-4f48-acef-a4b94a41c7a7" />
 
 📁 Repository Structure
 CloudResume/
@@ -148,6 +166,7 @@ CloudResume/
 ├── .github/workflows/   # CI/CD pipelines
 ├── index.html
 └── README.md
+
 🔐 Security & Networking
 
 IAM least-privilege roles
@@ -161,6 +180,7 @@ Route 53 domain routing
 SSL certificate integration
 
 Secrets managed for Kubernetes
+
 
 🎯 What This Project Demonstrates
 
@@ -183,6 +203,7 @@ Auto scaling & resilience testing
 CI/CD automation
 
 Production-grade deployment patterns
+
 
 🧠 Learning Outcomes
 
@@ -209,6 +230,7 @@ Metrics dashboard (Grafana)
 Blue/Green deployment strategy
 
 Authenticated admin dashboard for analytics
+
 
 🏆 Why This Stands Out
 
