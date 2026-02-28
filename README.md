@@ -1,94 +1,233 @@
 # Personal Portfolio: Cloud Resume Website
 
-A fully-hosted cloud-based personal portfolio website showcasing my projects, certifications, and technical skills. Built with a focus on AWS services, networking, security, routing, Terraform infrastructure as code, and API integration.
+A fully cloud-native personal portfolio built as an advanced implementation of the Cloud Resume Challenge.
 
-Live site: www.isaac-douglas.com
+This project demonstrates serverless architecture, infrastructure as code, containerization, Kubernetes orchestration, CI/CD automation, and production deployment patterns.
 
+🌍 Live Site: www.isaac-douglas.com
 
-Features
+🏗 Architecture Overview
 
-Visitor Counter: Tracks website visitors using AWS Lambda, DynamoDB, and API Gateway.
+This project contains two environments:
 
-Cloud Hosting: Website deployed on AWS S3 with secure routing and SSL.
+🚀 Production Environment (AWS Serverless)
 
-Infrastructure as Code: Entire AWS setup provisioned via Terraform.
+Frontend → API Gateway → Lambda → DynamoDB
+↓
+S3 (Static Hosting)
+↓
+Route 53 + SSL
 
-Technical Showcase: Highlights projects, certifications, and technical skills in a clean, responsive design.
+Stack
 
-API Integration: Dynamic visitor counter updates through backend API calls.
+AWS S3 (static hosting)
 
-Security & Networking: Implemented proper IAM roles, S3 bucket policies, and routing configurations for secure access.
+AWS Lambda (visitor counter backend)
 
+Amazon API Gateway
 
-Tech Stack
-Category	Tools / Services
-Cloud	AWS S3, AWS Lambda, AWS DynamoDB, API Gateway
-IaC	Terraform
-Frontend	HTML, CSS, JavaScript
-Networking & Security	Route 53, SSL, IAM policies
-Other	GitHub for version control, GitHub Pages (if needed for frontend hosting)
+Amazon DynamoDB
 
+Route 53 (DNS)
 
-Project Structure
+IAM (security policies)
+
+Terraform (Infrastructure as Code)
+
+⚙️ Dev / Cloud-Native Environment (Container + Kubernetes)
+
+Frontend → API → FastAPI Visitor Service → DynamoDB
+↓
+Docker
+↓
+Kubernetes (Minikube)
+↓
+Horizontal Pod Autoscaler
+
+Stack
+
+Python (FastAPI)
+
+Docker (containerization)
+
+Kubernetes (Minikube cluster)
+
+Horizontal Pod Autoscaler (HPA)
+
+GitHub Actions (CI/CD)
+
+Terraform (infrastructure provisioning)
+
+AWS (shared DynamoDB backend)
+
+🔧 Key Features
+✅ Infrastructure as Code (Terraform)
+
+Entire AWS production environment provisioned via Terraform
+
+S3 buckets, IAM roles, DynamoDB tables, API Gateway
+
+Reproducible cloud infrastructure
+
+✅ Serverless Backend (Production)
+
+Lambda-based visitor counter
+
+API Gateway integration
+
+DynamoDB for persistent storage
+
+Secure IAM policies
+
+Public API consumed by frontend JavaScript
+
+✅ Containerization (Dev)
+
+FastAPI backend packaged in Docker
+
+Reproducible development environment
+
+Local testing via Docker + Minikube
+
+✅ Kubernetes Orchestration
+
+Deployment & Service YAML definitions
+
+Scalable pod configuration
+
+Secrets management for AWS credentials
+
+Horizontal Pod Autoscaler (HPA)
+
+Demonstrated:
+
+Auto scaling under CPU load
+
+Pod duplication under stress
+
+Scale-down when idle
+
+Self-healing when pods are manually killed
+
+✅ CI/CD Automation
+
+GitHub Actions pipeline:
+
+Automated build on push
+
+Backend tests execution
+
+Docker image builds
+
+Infrastructure validation
+
+CloudFront invalidation (frontend updates)
+
+📊 Stress Testing & Observability
+
+Load testing visitor API
+
+Measured response times under load
+
+Observed scaling events
+
+Monitored pod restart counts
+
+Verified Kubernetes self-healing behavior
+
+📁 Repository Structure
 CloudResume/
 │
-├─ assets/           # Images, icons, and static assets
-├─ css/              # Stylesheets
-├─ js/               # Frontend JavaScript
-├─ infrastructure/   # Terraform scripts for AWS resources
-├─ index.html        # Main landing page
-└─ README.md         # Project documentation
-Deployment / Setup
+├── assets/              # Static assets
+├── css/                 # Frontend styles
+├── js/                  # Visitor counter integration
+├── backend/             # Serverless Lambda backend
+├── docker/              # Docker configuration
+├── kubernetes/          # Kubernetes YAML manifests
+├── infrastructure/      # Terraform IaC
+├── .github/workflows/   # CI/CD pipelines
+├── index.html
+└── README.md
+🔐 Security & Networking
 
-Prerequisites: Terraform installed, AWS CLI configured with proper credentials.
+IAM least-privilege roles
 
+Secure S3 bucket policies
 
-Clone repository
+API Gateway CORS configuration
 
-git clone https://github.com/DUGE331/CloudResume.git
-cd CloudResume
+Route 53 domain routing
 
+SSL certificate integration
 
-Deploy infrastructure via Terraform
+Secrets managed for Kubernetes
 
-cd infrastructure
-terraform init
-terraform apply
+🎯 What This Project Demonstrates
 
-Follow prompts to approve resource creation.
+This is not just a static website.
 
-Upload website to S3
+It demonstrates:
 
-Use the Terraform deployment or manually sync index.html, css/, js/, and assets/ to the S3 bucket.
+Cloud architecture design
 
-API Configuration
+Infrastructure as Code (Terraform)
 
-Lambda function integrated with API Gateway handles visitor count updates.
+Serverless backend engineering
 
-DynamoDB table stores visitor data securely.
+Containerization best practices
 
-Access your site
+Kubernetes orchestration
 
-Visit the domain configured via Route 53 / S3 static hosting.
+Auto scaling & resilience testing
 
-Visitor counter will automatically increment with each new page load.
+CI/CD automation
 
+Production-grade deployment patterns
 
-Learning Outcomes
+🧠 Learning Outcomes
 
-Proficient in deploying static websites to AWS S3 with serverless backend functionality.
+Designed and deployed production-ready AWS infrastructure
 
-Hands-on experience with Terraform for managing cloud infrastructure.
+Implemented scalable microservice architecture
 
-Understanding of API Gateway, Lambda, and DynamoDB integration.
+Built automated CI/CD pipelines
 
-Applied networking, security, and routing best practices in a cloud environment.
+Applied real-world DevOps patterns
 
+Practiced failure recovery & load testing
 
-Future Improvements
+🔮 Future Improvements
 
-Add authentication for personalized dashboard access.
+EKS production cluster deployment
 
-Implement CI/CD pipeline for automated deployments.
+Ingress controller + ALB
+
+Centralized logging (CloudWatch / Prometheus)
+
+Metrics dashboard (Grafana)
+
+Blue/Green deployment strategy
+
+Authenticated admin dashboard for analytics
+
+🏆 Why This Stands Out
+
+Most Cloud Resume projects stop at serverless.
+
+This version expands into:
+
+Kubernetes
+
+Auto scaling
+
+Container orchestration
+
+Stress testing
+
+CI/CD pipelines
+
+Production deployment patterns
+
+This demonstrates real-world DevOps capability beyond a tutorial implementation.
 
 Expand API integrations for dynamic project data.
