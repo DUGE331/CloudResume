@@ -5,77 +5,65 @@ A fully cloud-native personal portfolio built as an advanced implementation of t
 This project demonstrates serverless architecture, infrastructure as code, containerization, Kubernetes orchestration, CI/CD automation, and production deployment patterns.
 
 
-🌍 Live Site: www.isaac-douglas.com
+## 🌍 Live Site: www.isaac-douglas.com
 
+## 🏗 Architecture Overview
 
-🏗 Architecture Overview
+This project demonstrates two deployment approaches for the same application:
 
-This project contains two environments:
+---
 
-🚀 Production Environment (AWS Serverless)
+**🚀 AWS Serverless Architecture (Production)**  
 
-Frontend → API Gateway → Lambda → DynamoDB
-↓
-S3 (Static Hosting)
-↓
-Route 53 + SSL
+Frontend → API Gateway → Lambda → DynamoDB  
+↓  
+S3 (Static Hosting)  
+↓  
+Route 53 + SSL  
 
-Stack
+**Tech Stack:**  
+- AWS S3 (static hosting)  
+- AWS Lambda (visitor counter backend)  
+- Amazon API Gateway  
+- Amazon DynamoDB  
+- Route 53 (DNS)  
+- IAM (security policies)  
+- Terraform (Infrastructure as Code)  
 
-AWS S3 (static hosting)
+---
 
-AWS Lambda (visitor counter backend)
+**⚙️ Cloud-Native Architecture (Docker + Kubernetes, Dev)**  
 
-Amazon API Gateway
+Frontend → API → FastAPI Visitor Service → DynamoDB  
+↓  
+Docker  
+↓  
+Kubernetes (Minikube)  
+↓  
+Horizontal Pod Autoscaler  
 
-Amazon DynamoDB
+**Tech Stack:**  
+- Python (FastAPI)  
+- Docker (containerization)  
+- Kubernetes (Minikube cluster)  
+- Horizontal Pod Autoscaler (HPA)  
+- GitHub Actions (CI/CD)  
+- Terraform (infrastructure provisioning)  
+- AWS (shared DynamoDB backend)
 
-Route 53 (DNS)
+## 🔧 Key Features
 
-IAM (security policies)
+### ✅ Infrastructure as Code (Terraform)
 
-Terraform (Infrastructure as Code)
-
-
-⚙️ Dev / Cloud-Native Environment (Container + Kubernetes)
-
-Frontend → API → FastAPI Visitor Service → DynamoDB
-↓
-Docker
-↓
-Kubernetes (Minikube)
-↓
-Horizontal Pod Autoscaler
-
-Stack
-
-Python (FastAPI)
-
-Docker (containerization)
-
-Kubernetes (Minikube cluster)
-
-Horizontal Pod Autoscaler (HPA)
-
-GitHub Actions (CI/CD)
-
-Terraform (infrastructure provisioning)
-
-AWS (shared DynamoDB backend)
-
-
-🔧 Key Features
-
-✅ Infrastructure as Code (Terraform)
-
-Entire AWS production environment provisioned via Terraform
+Entire AWS production environment was first deployed in console 
+and then provisioned via Terraform after development and backend intigration.
 
 S3 buckets, IAM roles, DynamoDB tables, API Gateway
 
 Reproducible cloud infrastructure
 
 
-✅ Serverless Backend (Production)
+### ✅ Serverless Backend (Production)
 
 Lambda-based visitor counter
 
@@ -97,7 +85,7 @@ Reproducible development environment
 Local testing via Docker + Minikube
 
 
-✅ Kubernetes Orchestration
+### ✅ Kubernetes Orchestration
 
 Deployment & Service YAML definitions
 
@@ -118,7 +106,7 @@ Scale-down when idle
 Self-healing when pods are manually killed
 
 
-✅ CI/CD Automation
+### ✅ CI/CD Automation
 
 GitHub Actions pipeline:
 <img width="2080" height="1397" alt="Screenshot 2026-02-28 164301" src="https://github.com/user-attachments/assets/bc4a5f93-ed32-48c3-a420-2058a0036a61" />
@@ -132,11 +120,11 @@ Docker image builds
 
 Infrastructure validation
 
-CloudFront invalidation (frontend updates)
+CloudFront invalidation via CodeBuild in AWS (frontend updates)
 <img width="1912" height="892" alt="InvalidateCloudFront-Build-Success" src="https://github.com/user-attachments/assets/d9fbea97-bc6f-4e5a-97ee-5b6cdb017d41" />
 
 
-📊 Stress Testing & Observability
+## 📊 Stress Testing & Observability
 
 Load testing visitor API
 
@@ -153,36 +141,55 @@ Verified Kubernetes self-healing behavior
 <img width="2879" height="1490" alt="KuberDashPods" src="https://github.com/user-attachments/assets/d0f73af3-3c14-4a63-a836-79cd21b68ec6" />
 <img width="2856" height="1613" alt="KuberTermStressResults" src="https://github.com/user-attachments/assets/64085dab-7313-4f48-acef-a4b94a41c7a7" />
 
-📁 Repository Structure
+## 📁 Project Structure
 CloudResume/
 │
-├── assets/              # Static assets
-├── css/                 # Frontend styles
-├── js/                  # Visitor counter integration
-├── backend/             # Serverless Lambda backend
-├── docker/              # Docker configuration
-├── kubernetes/          # Kubernetes YAML manifests
-├── infrastructure/      # Terraform IaC
-├── .github/workflows/   # CI/CD pipelines
+├── assets/                    # Static images and media
+│
+├── css/                       # Frontend styling
+│
+├── js/                        # Visitor counter API integration
+│
+├── backend/                   # Serverless Lambda backend
+│   ├── app.py
+│   ├── requirements.txt
+│   └── template.yaml
+│
+├── docker/                    # Docker configuration
+│   └── Dockerfile
+│
+├── kubernetes/                # Kubernetes manifests
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── hpa.yaml
+│
+├── infrastructure/            # Terraform IaC
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+│
+├── .github/workflows/         # CI/CD pipelines
+│
 ├── index.html
+│
 └── README.md
 
-🔐 Security & Networking
+## 🔐 Security & Networking
 
-IAM least-privilege roles
+IAM least-privilege policies
 
-Secure S3 bucket policies
+Secure S3 bucket configuration
 
 API Gateway CORS configuration
 
-Route 53 domain routing
+Route 53 DNS routing
 
 SSL certificate integration
 
-Secrets managed for Kubernetes
+Kubernetes secrets management
 
 
-🎯 What This Project Demonstrates
+## 🎯 What This Project Demonstrates
 
 This is not just a static website.
 
@@ -205,7 +212,7 @@ CI/CD automation
 Production-grade deployment patterns
 
 
-🧠 Learning Outcomes
+## 🧠 Learning Outcomes
 
 Designed and deployed production-ready AWS infrastructure
 
@@ -217,22 +224,7 @@ Applied real-world DevOps patterns
 
 Practiced failure recovery & load testing
 
-🔮 Future Improvements
-
-EKS production cluster deployment
-
-Ingress controller + ALB
-
-Centralized logging (CloudWatch / Prometheus)
-
-Metrics dashboard (Grafana)
-
-Blue/Green deployment strategy
-
-Authenticated admin dashboard for analytics
-
-
-🏆 Why This Stands Out
+## 🏆 Why This Stands Out
 
 Most Cloud Resume projects stop at serverless.
 
