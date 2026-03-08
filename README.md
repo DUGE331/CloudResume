@@ -11,7 +11,8 @@ This project demonstrates serverless architecture, infrastructure as code, conta
 
 This project demonstrates two deployment approaches for the same application:
 
----
+---<img width="1200" height="637" alt="cloud resume challenge full architecture" src="https://github.com/user-attachments/assets/13271e48-5749-471c-a83f-f4b7e1a2b553" />
+
 
 **🚀 AWS Serverless Architecture (Production)**  
 
