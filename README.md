@@ -9,40 +9,39 @@ This project demonstrates serverless architecture, infrastructure as code, conta
 
 ## 🏗 Architecture Overview
 
-This project demonstrates two deployment approaches for the same application:
+I created a clear diagram in Draw.io showing:
+
+User → Cloudflare → CloudFront → Frontend/Backend
+
+Backend: API Gateway → Lambda → DynamoDB
+
+CI/CD & Terraform provisioning AWS resources
+
+Docker + Kubernetes dev/test environment for resilience and autoscaling
 
 <img width="1823" height="1055" alt="CloudResumeChallenge drawio" src="https://github.com/user-attachments/assets/e01d142f-2be2-45b9-bdab-8f15daa1e35b" />
 
-
-
-**🚀 AWS Serverless Architecture (Production)**  
-
-Frontend → API Gateway → Lambda → DynamoDB  
-↓  
-S3 (Static Hosting)  
-↓  
-Route 53 + SSL  
 
 **Tech Stack:**  
 - AWS S3 (static hosting)  
 - AWS Lambda (visitor counter backend)  
 - Amazon API Gateway  
 - Amazon DynamoDB  
-- Route 53 (DNS)  
+- Cloudflare (DNS)  
 - IAM (security policies)  
-- Terraform (Infrastructure as Code)  
+- Terraform/Cloudformation (Infrastructure as Code/YAML)
+- Kubernetes Testing
+- FastApi
+- MiniKube
+- Docker
+- GithubActions
+- CodeBuild
+- Python
+- JavaScript
 
 ---
 
 **⚙️ Cloud-Native Architecture (Docker + Kubernetes, Dev)**  
-
-Frontend → API → FastAPI Visitor Service → DynamoDB  
-↓  
-Docker  
-↓  
-Kubernetes (Minikube)  
-↓  
-Horizontal Pod Autoscaler  
 
 **Tech Stack:**  
 - Python (FastAPI)  
@@ -175,12 +174,9 @@ Secure S3 bucket configuration
 
 API Gateway CORS configuration
 
-Route 53 DNS routing
+CloudFlare DNS routing
 
 SSL certificate integration
-
-Kubernetes secrets management
-
 
 ## 🎯 What This Project Demonstrates
 
