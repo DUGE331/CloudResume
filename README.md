@@ -11,14 +11,6 @@ This project demonstrates serverless architecture, infrastructure as code, conta
 
 I created a clear diagram in Draw.io showing:
 
-User → Cloudflare → CloudFront → Frontend/Backend
-
-Backend: API Gateway → Lambda → DynamoDB
-
-CI/CD & Terraform provisioning AWS resources
-
-Docker + Kubernetes dev/test environment for resilience and autoscaling
-
 <img width="1823" height="1055" alt="CloudResumeChallenge drawio" src="https://github.com/user-attachments/assets/e01d142f-2be2-45b9-bdab-8f15daa1e35b" />
 
 
